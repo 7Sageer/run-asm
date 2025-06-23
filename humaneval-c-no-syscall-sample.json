@@ -1,0 +1,98 @@
+[
+    {
+        "task_id": 0,
+        "type": "O0",
+        "c_func": "#include <stdio.h>\n#include <stdlib.h>\n#include <math.h>\n\nint func0(float numbers[], int size, float threshold) {\n    int i, j;\n\n    for (i = 0; i < size; i++)\n        for (j = i + 1; j < size; j++)\n            if (fabs(numbers[i] - numbers[j]) < threshold)\n                return 1;\n\n    return 0;\n}",
+        "c_test": "#include <stdio.h>\n#include <assert.h>\n\nint main(){\n    float a[] = {1.0, 2.0, 3.9, 4.0, 5.0, 2.2};\n    assert(func0(a, 6, 0.3) == 1);\n    assert(func0(a, 6, 0.05) == 0);\n\n    float b[] = {1.0, 2.0, 5.9, 4.0, 5.0};\n    assert(func0(b, 5, 0.95) == 1);\n    assert(func0(b, 5, 0.8) == 0);\n    \n    float c[] = {1.0, 2.0, 3.0, 4.0, 5.0};\n    assert(func0(c, 5, 2.0) == 1);\n\n    float d[] = {1.1, 2.2, 3.1, 4.1, 5.1};\n    assert(func0(d, 5, 1.0) == 1);\n    assert(func0(d, 5, 0.5) == 0);\n\n    return 0;\n}"
+    },
+    {
+        "task_id": 0,
+        "type": "O1",
+        "c_func": "#include <stdio.h>\n#include <stdlib.h>\n#include <math.h>\n\nint func0(float numbers[], int size, float threshold) {\n    int i, j;\n\n    for (i = 0; i < size; i++)\n        for (j = i + 1; j < size; j++)\n            if (fabs(numbers[i] - numbers[j]) < threshold)\n                return 1;\n\n    return 0;\n}",
+        "c_test": "#include <stdio.h>\n#include <assert.h>\n\nint main(){\n    float a[] = {1.0, 2.0, 3.9, 4.0, 5.0, 2.2};\n    assert(func0(a, 6, 0.3) == 1);\n    assert(func0(a, 6, 0.05) == 0);\n\n    float b[] = {1.0, 2.0, 5.9, 4.0, 5.0};\n    assert(func0(b, 5, 0.95) == 1);\n    assert(func0(b, 5, 0.8) == 0);\n    \n    float c[] = {1.0, 2.0, 3.0, 4.0, 5.0};\n    assert(func0(c, 5, 2.0) == 1);\n\n    float d[] = {1.1, 2.2, 3.1, 4.1, 5.1};\n    assert(func0(d, 5, 1.0) == 1);\n    assert(func0(d, 5, 0.5) == 0);\n\n    return 0;\n}"
+    },
+    {
+        "task_id": 0,
+        "type": "O2",
+        "c_func": "#include <stdio.h>\n#include <stdlib.h>\n#include <math.h>\n\nint func0(float numbers[], int size, float threshold) {\n    int i, j;\n\n    for (i = 0; i < size; i++)\n        for (j = i + 1; j < size; j++)\n            if (fabs(numbers[i] - numbers[j]) < threshold)\n                return 1;\n\n    return 0;\n}",
+        "c_test": "#include <stdio.h>\n#include <assert.h>\n\nint main(){\n    float a[] = {1.0, 2.0, 3.9, 4.0, 5.0, 2.2};\n    assert(func0(a, 6, 0.3) == 1);\n    assert(func0(a, 6, 0.05) == 0);\n\n    float b[] = {1.0, 2.0, 5.9, 4.0, 5.0};\n    assert(func0(b, 5, 0.95) == 1);\n    assert(func0(b, 5, 0.8) == 0);\n    \n    float c[] = {1.0, 2.0, 3.0, 4.0, 5.0};\n    assert(func0(c, 5, 2.0) == 1);\n\n    float d[] = {1.1, 2.2, 3.1, 4.1, 5.1};\n    assert(func0(d, 5, 1.0) == 1);\n    assert(func0(d, 5, 0.5) == 0);\n\n    return 0;\n}"
+    },
+    {
+        "task_id": 0,
+        "type": "O3",
+        "c_func": "#include <stdio.h>\n#include <stdlib.h>\n#include <math.h>\n\nint func0(float numbers[], int size, float threshold) {\n    int i, j;\n\n    for (i = 0; i < size; i++)\n        for (j = i + 1; j < size; j++)\n            if (fabs(numbers[i] - numbers[j]) < threshold)\n                return 1;\n\n    return 0;\n}",
+        "c_test": "#include <stdio.h>\n#include <assert.h>\n\nint main(){\n    float a[] = {1.0, 2.0, 3.9, 4.0, 5.0, 2.2};\n    assert(func0(a, 6, 0.3) == 1);\n    assert(func0(a, 6, 0.05) == 0);\n\n    float b[] = {1.0, 2.0, 5.9, 4.0, 5.0};\n    assert(func0(b, 5, 0.95) == 1);\n    assert(func0(b, 5, 0.8) == 0);\n    \n    float c[] = {1.0, 2.0, 3.0, 4.0, 5.0};\n    assert(func0(c, 5, 2.0) == 1);\n\n    float d[] = {1.1, 2.2, 3.1, 4.1, 5.1};\n    assert(func0(d, 5, 1.0) == 1);\n    assert(func0(d, 5, 0.5) == 0);\n\n    return 0;\n}"
+    },
+    {
+        "task_id": 2,
+        "type": "O0",
+        "c_func": "#include <stdio.h>\n#include <math.h>\n\nfloat func0(float number) {\n    return number - (int)number;\n}",
+        "c_test": "#include <stdio.h>\n#include <assert.h>\n#include <math.h>\n\nint main() {\n    assert(func0(3.5f) == 0.5f);\n    assert(fabs(func0(1.33f) - 0.33f) < 1e-4);\n    assert(fabs(func0(123.456f) - 0.456f) < 1e-4);\n\n    return 0;\n}"
+    },
+    {
+        "task_id": 2,
+        "type": "O1",
+        "c_func": "#include <stdio.h>\n#include <math.h>\n\nfloat func0(float number) {\n    return number - (int)number;\n}",
+        "c_test": "#include <stdio.h>\n#include <assert.h>\n#include <math.h>\n\nint main() {\n    assert(func0(3.5f) == 0.5f);\n    assert(fabs(func0(1.33f) - 0.33f) < 1e-4);\n    assert(fabs(func0(123.456f) - 0.456f) < 1e-4);\n\n    return 0;\n}"
+    },
+    {
+        "task_id": 2,
+        "type": "O2",
+        "c_func": "#include <stdio.h>\n#include <math.h>\n\nfloat func0(float number) {\n    return number - (int)number;\n}",
+        "c_test": "#include <stdio.h>\n#include <assert.h>\n#include <math.h>\n\nint main() {\n    assert(func0(3.5f) == 0.5f);\n    assert(fabs(func0(1.33f) - 0.33f) < 1e-4);\n    assert(fabs(func0(123.456f) - 0.456f) < 1e-4);\n\n    return 0;\n}"
+    },
+    {
+        "task_id": 2,
+        "type": "O3",
+        "c_func": "#include <stdio.h>\n#include <math.h>\n\nfloat func0(float number) {\n    return number - (int)number;\n}",
+        "c_test": "#include <stdio.h>\n#include <assert.h>\n#include <math.h>\n\nint main() {\n    assert(func0(3.5f) == 0.5f);\n    assert(fabs(func0(1.33f) - 0.33f) < 1e-4);\n    assert(fabs(func0(123.456f) - 0.456f) < 1e-4);\n\n    return 0;\n}"
+    },
+    {
+        "task_id": 3,
+        "type": "O0",
+        "c_func": "#include <stdio.h>\n\nint func0(int operations[], int size) {\n    int num = 0;\n    for (int i = 0; i < size; i++) {\n        num += operations[i];\n        if (num < 0) return 1;\n    }\n    return 0;\n}",
+        "c_test": "#include <assert.h>\n\nint main() {\n    int case1[] = {};\n    assert(func0(case1, 0) == 0);\n\n    int case2[] = {1, 2, -3, 1, 2, -3};\n    assert(func0(case2, 6) == 0);\n\n    int case3[] = {1, 2, -4, 5, 6};\n    assert(func0(case3, 5) == 1);\n\n    int case4[] = {1, -1, 2, -2, 5, -5, 4, -4};\n    assert(func0(case4, 8) == 0);\n\n    int case5[] = {1, -1, 2, -2, 5, -5, 4, -5};\n    assert(func0(case5, 8) == 1);\n\n    int case6[] = {1, -2, 2, -2, 5, -5, 4, -4};\n    assert(func0(case6, 8) == 1);\n\n    return 0;\n}"
+    },
+    {
+        "task_id": 3,
+        "type": "O1",
+        "c_func": "#include <stdio.h>\n\nint func0(int operations[], int size) {\n    int num = 0;\n    for (int i = 0; i < size; i++) {\n        num += operations[i];\n        if (num < 0) return 1;\n    }\n    return 0;\n}",
+        "c_test": "#include <assert.h>\n\nint main() {\n    int case1[] = {};\n    assert(func0(case1, 0) == 0);\n\n    int case2[] = {1, 2, -3, 1, 2, -3};\n    assert(func0(case2, 6) == 0);\n\n    int case3[] = {1, 2, -4, 5, 6};\n    assert(func0(case3, 5) == 1);\n\n    int case4[] = {1, -1, 2, -2, 5, -5, 4, -4};\n    assert(func0(case4, 8) == 0);\n\n    int case5[] = {1, -1, 2, -2, 5, -5, 4, -5};\n    assert(func0(case5, 8) == 1);\n\n    int case6[] = {1, -2, 2, -2, 5, -5, 4, -4};\n    assert(func0(case6, 8) == 1);\n\n    return 0;\n}"
+    },
+    {
+        "task_id": 3,
+        "type": "O2",
+        "c_func": "#include <stdio.h>\n\nint func0(int operations[], int size) {\n    int num = 0;\n    for (int i = 0; i < size; i++) {\n        num += operations[i];\n        if (num < 0) return 1;\n    }\n    return 0;\n}",
+        "c_test": "#include <assert.h>\n\nint main() {\n    int case1[] = {};\n    assert(func0(case1, 0) == 0);\n\n    int case2[] = {1, 2, -3, 1, 2, -3};\n    assert(func0(case2, 6) == 0);\n\n    int case3[] = {1, 2, -4, 5, 6};\n    assert(func0(case3, 5) == 1);\n\n    int case4[] = {1, -1, 2, -2, 5, -5, 4, -4};\n    assert(func0(case4, 8) == 0);\n\n    int case5[] = {1, -1, 2, -2, 5, -5, 4, -5};\n    assert(func0(case5, 8) == 1);\n\n    int case6[] = {1, -2, 2, -2, 5, -5, 4, -4};\n    assert(func0(case6, 8) == 1);\n\n    return 0;\n}"
+    },
+    {
+        "task_id": 3,
+        "type": "O3",
+        "c_func": "#include <stdio.h>\n\nint func0(int operations[], int size) {\n    int num = 0;\n    for (int i = 0; i < size; i++) {\n        num += operations[i];\n        if (num < 0) return 1;\n    }\n    return 0;\n}",
+        "c_test": "#include <assert.h>\n\nint main() {\n    int case1[] = {};\n    assert(func0(case1, 0) == 0);\n\n    int case2[] = {1, 2, -3, 1, 2, -3};\n    assert(func0(case2, 6) == 0);\n\n    int case3[] = {1, 2, -4, 5, 6};\n    assert(func0(case3, 5) == 1);\n\n    int case4[] = {1, -1, 2, -2, 5, -5, 4, -4};\n    assert(func0(case4, 8) == 0);\n\n    int case5[] = {1, -1, 2, -2, 5, -5, 4, -5};\n    assert(func0(case5, 8) == 1);\n\n    int case6[] = {1, -2, 2, -2, 5, -5, 4, -4};\n    assert(func0(case6, 8) == 1);\n\n    return 0;\n}"
+    },
+    {
+        "task_id": 4,
+        "type": "O0",
+        "c_func": "#include <stdio.h>\n#include <math.h>\n\nfloat func0(float numbers[], int size) {\n    float sum = 0;\n    float avg, msum, mavg;\n    int i = 0;\n\n    for (i = 0; i < size; i++)\n        sum += numbers[i];\n\n    avg = sum / size;\n    msum = 0;\n\n    for (i = 0; i < size; i++)\n        msum += fabs(numbers[i] - avg);\n\n    return msum / size;\n}",
+        "c_test": "#include <assert.h>\n#include <math.h>\n\nint main() {\n    float case1[] = {1.0, 2.0, 3.0};\n    assert(fabs(func0(case1, 3) - 2.0/3.0) < 1e-4);\n\n    float case2[] = {1.0, 2.0, 3.0, 4.0};\n    assert(fabs(func0(case2, 4) - 1.0) < 1e-4);\n\n    float case3[] = {1.0, 2.0, 3.0, 4.0, 5.0};\n    assert(fabs(func0(case3, 5) - 6.0/5.0) < 1e-4);\n\n    return 0;\n}"
+    },
+    {
+        "task_id": 4,
+        "type": "O1",
+        "c_func": "#include <stdio.h>\n#include <math.h>\n\nfloat func0(float numbers[], int size) {\n    float sum = 0;\n    float avg, msum, mavg;\n    int i = 0;\n\n    for (i = 0; i < size; i++)\n        sum += numbers[i];\n\n    avg = sum / size;\n    msum = 0;\n\n    for (i = 0; i < size; i++)\n        msum += fabs(numbers[i] - avg);\n\n    return msum / size;\n}",
+        "c_test": "#include <assert.h>\n#include <math.h>\n\nint main() {\n    float case1[] = {1.0, 2.0, 3.0};\n    assert(fabs(func0(case1, 3) - 2.0/3.0) < 1e-4);\n\n    float case2[] = {1.0, 2.0, 3.0, 4.0};\n    assert(fabs(func0(case2, 4) - 1.0) < 1e-4);\n\n    float case3[] = {1.0, 2.0, 3.0, 4.0, 5.0};\n    assert(fabs(func0(case3, 5) - 6.0/5.0) < 1e-4);\n\n    return 0;\n}"
+    },
+    {
+        "task_id": 4,
+        "type": "O2",
+        "c_func": "#include <stdio.h>\n#include <math.h>\n\nfloat func0(float numbers[], int size) {\n    float sum = 0;\n    float avg, msum, mavg;\n    int i = 0;\n\n    for (i = 0; i < size; i++)\n        sum += numbers[i];\n\n    avg = sum / size;\n    msum = 0;\n\n    for (i = 0; i < size; i++)\n        msum += fabs(numbers[i] - avg);\n\n    return msum / size;\n}",
+        "c_test": "#include <assert.h>\n#include <math.h>\n\nint main() {\n    float case1[] = {1.0, 2.0, 3.0};\n    assert(fabs(func0(case1, 3) - 2.0/3.0) < 1e-4);\n\n    float case2[] = {1.0, 2.0, 3.0, 4.0};\n    assert(fabs(func0(case2, 4) - 1.0) < 1e-4);\n\n    float case3[] = {1.0, 2.0, 3.0, 4.0, 5.0};\n    assert(fabs(func0(case3, 5) - 6.0/5.0) < 1e-4);\n\n    return 0;\n}"
+    },
+    {
+        "task_id": 4,
+        "type": "O3",
+        "c_func": "#include <stdio.h>\n#include <math.h>\n\nfloat func0(float numbers[], int size) {\n    float sum = 0;\n    float avg, msum, mavg;\n    int i = 0;\n\n    for (i = 0; i < size; i++)\n        sum += numbers[i];\n\n    avg = sum / size;\n    msum = 0;\n\n    for (i = 0; i < size; i++)\n        msum += fabs(numbers[i] - avg);\n\n    return msum / size;\n}",
+        "c_test": "#include <assert.h>\n#include <math.h>\n\nint main() {\n    float case1[] = {1.0, 2.0, 3.0};\n    assert(fabs(func0(case1, 3) - 2.0/3.0) < 1e-4);\n\n    float case2[] = {1.0, 2.0, 3.0, 4.0};\n    assert(fabs(func0(case2, 4) - 1.0) < 1e-4);\n\n    float case3[] = {1.0, 2.0, 3.0, 4.0, 5.0};\n    assert(fabs(func0(case3, 5) - 6.0/5.0) < 1e-4);\n\n    return 0;\n}"
+    }
+] 
