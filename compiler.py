@@ -11,7 +11,7 @@ def clean_asm(code):
     directives_to_remove = (
         '.file', '.ident', '.size', '.section', '.globl', '.type', '.text', 
         '.cfi_startproc', '.cfi_endproc', '.cfi_def_cfa_offset', '.cfi_offset', 
-        '.cfi_def_cfa_register', '.cfi_def_cfa', '.LFE0', '.note.GNU-stack'
+        '.cfi_def_cfa_register', '.cfi_def_cfa', '.note.GNU-stack', '.string'
     )
     
     for line in code.strip().split('\n'):
@@ -37,7 +37,7 @@ def clean_asm(code):
                 pass
 
         # Filter out only unnecessary assembler directives
-        if not line.startswith(directives_to_remove):
+        if not line.startswith(directives_to_remove) and not line.startswith('.LFE') and not re.match(r'^\d+:', line):
             lines.append(line)
             
     # Join the cleaned lines into a single string for Keystone
@@ -55,8 +55,9 @@ def compile_c_to_asm(c_code, optimization='O0'):
     try:
         # Invoke GCC to compile the C file to an assembly file (-S)
         # -masm=att is redundant for GCC on Linux but ensures AT&T syntax
+        # Add -fcf-protection=none to disable CET instructions like endbr64
         subprocess.run(
-            ['gcc', '-S', f'-{optimization}', c_file_path, '-o', s_file_path],
+            ['gcc', '-S', f'-{optimization}', '-fcf-protection=none', c_file_path, '-o', s_file_path],
             check=True, capture_output=True, text=True
         )
         with open(s_file_path, 'r') as f:
